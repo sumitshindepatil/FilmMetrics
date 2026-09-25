@@ -1,0 +1,17 @@
+{
+  "name": "filmmetrics",
+  "version": "1.0.0",
+  "description": "FilmMetrics - Rating-Based Movie Tracking System - CCA2 CI/CD project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  }
+}
