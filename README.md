@@ -5,13 +5,13 @@ Built for CCA2 — Cloud Computing and DevOps — to demonstrate Git, automated 
 
 ## Features
 
-- Home page lists all movies, server-rendered from in-memory data.
-- Form to add a movie (`POST /movies`) with title, genre, status, rating — validated (rating must be 0-10).
-- **Top Picks**: any movie rated 8+ is automatically surfaced in its own section.
-- Filter by genre or status (`?genre=&status=`).
-- JSON API: `GET /api/movies`, `GET /api/top-picks`.
-- Health check: `GET /health`.
-- Footer shows the live commit ID (`RENDER_GIT_COMMIT`).
+* Home page lists all movies, server-rendered from in-memory data.
+* Form to add a movie (`POST /movies`) with title, genre, status, rating — validated (rating must be 0-10).
+* **Top Picks**: any movie rated 8+ is automatically surfaced in its own section.
+* Filter by genre or status (`?genre=\&status=`).
+* JSON API: `GET /api/movies`, `GET /api/top-picks`.
+* Health check: `GET /health`.
+* Footer shows the live commit ID (`RENDER\_GIT\_COMMIT`).
 
 ## Run locally
 
@@ -36,12 +36,14 @@ docker run -p 3000:3000 filmmetrics
 Git push -> Lint -> Test -> Docker Build + Smoke Test -> Deploy (main only) -> Live site
 ```
 
-- **Lint + Test**: run on every push and pull request.
-- **Build**: Docker image is built and smoke-tested (`/health` must respond).
-- **Deploy**: only runs on pushes to `main`, after build succeeds — triggers a Render deploy hook.
-- **Verify**: live URL is opened and the footer commit ID is checked against the latest green run.
+* **Lint + Test**: run on every push and pull request.
+* **Build**: Docker image is built and smoke-tested (`/health` must respond).
+* **Deploy**: only runs on pushes to `main`, after build succeeds — triggers a Render deploy hook.
+* **Verify**: live URL is opened and the footer commit ID is checked against the latest green run.
 
 ## Links
 
-- Repository: _add after pushing to GitHub_
-- Live application: _add after deploying to Render_
+* Repository: *add after pushing to GitHub*
+* Live application: *add after deploying to Render*
+* *Deployed via CI/CD pipeline.*
+
