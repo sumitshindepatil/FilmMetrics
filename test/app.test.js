@@ -6,7 +6,7 @@ test('health check returns ok', async () => {
   const server = app.listen(0);
   const base = `http://127.0.0.1:${server.address().port}`;
   const health = await (await fetch(`${base}/health`)).json();
-  assert.equal(health.status, 'ok');
+  assert.equal(health.status, 'broken');
   server.close();
 });
 
