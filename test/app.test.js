@@ -83,3 +83,21 @@ test('filtering by genre only returns matching movies', async () => {
   assert.ok(list.every((m) => m.genre === 'Sci-Fi'));
   server.close();
 });
+
+
+
+test('deleting a movie removes it from the list', async () => {
+  const server = app.listen(0);
+  const base = `http://127.0.0.1:${server.address().port}`;
+  await fetch(`${base}/movies`, {
+    method: 'POST',
+    body: new URLSearchParams({ title: 'ToDelete', genre: 'Drama', rating: '5' }),
+  });
+  const list = await (await fetch(`${base}/api/movies`)).json();
+  const movie = list.find((m) => m.title === 'ToDelete');
+  const del = await fetch(`${base}/movies/${movie.id}`, { method: 'DELETE' });
+  assert.equal(del.status, 200);
+  const listAfter = await (await fetch(`${base}/api/movies`)).json();
+  assert.ok(!listAfter.some((m) => m.id === movie.id));
+  server.close();
+});

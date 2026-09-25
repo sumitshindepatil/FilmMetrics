@@ -106,4 +106,15 @@ app.get('/api/top-picks', (req, res) => {
 
 app.get('/health', (req, res) => res.json({ status: 'ok', commit }));
 
+
+app.delete('/movies/:id', (req, res) => {
+  const id = Number(req.params.id);
+  const index = movies.findIndex((m) => m.id === id);
+  if (index === -1) {
+    return res.status(404).send('Movie not found');
+  }
+  movies.splice(index, 1);
+  res.json({ deleted: id });
+});
+
 module.exports = app;
