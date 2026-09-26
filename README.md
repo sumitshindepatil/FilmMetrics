@@ -8,10 +8,10 @@ Built for CCA2 — Cloud Computing and DevOps — to demonstrate Git, automated 
 * Home page lists all movies, server-rendered from in-memory data.
 * Form to add a movie (`POST /movies`) with title, genre, status, rating — validated (rating must be 0-10).
 * **Top Picks**: any movie rated 8+ is automatically surfaced in its own section.
-* Filter by genre or status (`?genre=\&status=`).
+* Filter by genre or status (`?genre=\\\&status=`).
 * JSON API: `GET /api/movies`, `GET /api/top-picks`.
 * Health check: `GET /health`.
-* Footer shows the live commit ID (`RENDER\_GIT\_COMMIT`).
+* Footer shows the live commit ID (`RENDER\\\_GIT\\\_COMMIT`).
 
 ## Run locally
 
@@ -46,4 +46,5 @@ Git push -> Lint -> Test -> Docker Build + Smoke Test -> Deploy (main only) -> L
 * Repository: *add after pushing to GitHub*
 * Live application: *add after deploying to Render*
 * *Deployed via CI/CD pipeline.*
+* *Repository maintained as part of CCA2 coursework.*
 
