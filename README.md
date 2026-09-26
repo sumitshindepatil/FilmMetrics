@@ -46,4 +46,4 @@ Git push -> Lint -> Test -> Docker Build + Smoke Test -> Deploy (main only) -> L
 * Repository: *add after pushing to GitHub*
 * Live application: *add after deploying to Render*
 * *Deployed via CI/CD pipeline.*
-
+Repository maintained as part of CCA2 coursework.
